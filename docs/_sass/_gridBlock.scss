@@ -37,7 +37,7 @@
 	flex-flow: row wrap;
 }
 .blockImage {
-	max-width: 150px;
+	min-width: 800px;
 	width: 50%;
 }
 .imageAlignTop .blockImage {
@@ -47,6 +47,15 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.imageAlignBottom .blockImage {
+	margin-top: 20px;
+}
+.imageAlignBottom.alignCenter .blockImage {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .imageAlignSide .blockImage {
 	flex: 0 1 100px;
 	margin-right: 20px;
@@ -73,7 +82,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: -10px -10px 10px -10px;
+    margin: 10px -10px 10px 0px;
 
     .twoByGridBlock {
       box-sizing: border-box;
@@ -98,7 +107,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: -10px -20px 10px -20px;
+    margin: 10px -20px 10px 0px;
 
     .twoByGridBlock {
       box-sizing: border-box;

@@ -1,19 +1,22 @@
-- title: Feature 1
+- title: Type Annotations
   text: |
-        This is a description of the feature which **can** use [markdown](#).
-  image: images/android.svg
+        Type annotations allow for code to be explicitly typed on parameters, class member variables and return values.
+  image: images/landing-page-features-type-annotations.png
 
-- title: Feature 2
+- title: Generics
   text: |
-        This is another description of a feature.
-  image: images/apple.svg
-  
-- title: Feature 3
-  text: |
-        This is another description of a feature.
-  image: images/facebook.png
+        Generics allow classes and methods to be parameterized (i.e., a type associated when a class is instantiated or a method is called) in the same vein as statically type languages like C# and Java).
+  image: images/landing-page-features-generics.png
 
-- title: Feature 4
+- title: Nullable Types
   text: |
-        This is another description of a feature.
-  image: images/instagram.png
+        Nullable Types are supported by Hack through use of the `?` operator. This introduces a safer way to deal with nulls and is very useful for primitive types that don’t generally allow null as one of their values, such as `bool` and `int` (using `?bool` and `?int` respectively). The operator can be used on any type or class.
+
+- title: Collections
+  text: |
+        Collections provide first class, built-in parameterized types such as Vector (an ordered, index-based list), Map (an ordered dictionary), Set (a list of unique values), and Pair (an index-based collection of exactly two elements).
+
+- title: Lambdas
+  text: |
+        Lambdas succinctly allow definition of first-class functions.
+  image: images/landing-page-features-lambdas.png
