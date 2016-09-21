@@ -1,22 +1,20 @@
 # Site settings
 permalink: /blog/:year/:month/:day/:title.html
 title: ProjectName
-tagline: This is a brief one-liner about the project
-description: >
-  This is a longer description of the project, a bit of a sales-pitch with a bit of technical information included.
+tagline: Programming productivity without breaking things
 fbappid: "1615782811974223"
-gacode: "UA-12345-6"
+gacode: "UA-49208336-1"
 # baseurl determines the subpath of your site. For example if you're using an
 # organisation.github.io/reponame/ basic site URL, then baseurl would be set
 # as "/reponame/" but leave blank if you have a top-level domain URL
 baseurl: ""
-url: "http://example.com" # the base hostname & protocol for your site
-ghrepo: "facebook/Site-Templates"
+url: "http://hacklang.org" # the base hostname & protocol for your site
+ghrepo: "hhvm/hacklang.org"
 
-# Use these color settings to determine your colour scheme for the site. 
+# Use these color settings to determine your colour scheme for the site.
 color:
-  # primary should be a vivid color that reflects the project's brand 
-  primary: "#3b5998"
+  # primary should be a vivid color that reflects the project's brand
+  primary: "#505050"
   # secondary should be a subtle light or dark color used on page backgrounds
   secondary: "#f9f9f9"
   # Use the following to specify whether the previous two colours are 'light'
@@ -25,7 +23,7 @@ color:
   secondary-overlay: "light"
 
 #Uncomment this if you want to enable Algolia doc search with your own values
-#searchconfig: 
+#searchconfig:
 #  apikey: ""
 #  indexname: ""
 
