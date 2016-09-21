@@ -1,6 +1,6 @@
 # Site settings
 permalink: /blog/:year/:month/:day/:title.html
-title: ProjectName
+title: Hack
 tagline: Programming productivity without breaking things
 fbappid: "1615782811974223"
 gacode: "UA-49208336-1"
