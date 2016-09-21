@@ -1,14 +1,6 @@
-- title: Who Uses This Project?
-  items:
-  - name: Facebook
-    url: https://facebook.com
-    img: static/images/facebook.png
-  - name: Instagram
-    url: https://www.instagram.com
-    img: static/images/instagram.png
-  - name: Facebook
-    url: https://facebook.com
-    img: static/images/facebook.png
-  - name: Instagram
-    url: https://www.instagram.com
-    img: static/images/instagram.png
+# If you have companies or projects that use Hack THAT YOU WANT TO HIGHLIGHT, you can have this.
+#- title: Who Uses This Project?
+#  items:
+#  - name: Facebook
+#    url: https://facebook.com
+#    img: static/images/facebook.png
