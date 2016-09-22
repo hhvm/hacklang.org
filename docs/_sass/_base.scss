@@ -413,8 +413,12 @@ section#intro {
 
       #inner {
         box-sizing: border-box;
-        max-width: 600px;
+        max-width: 460px;
         padding-right: 40px;
+      }
+
+      .wrapper {
+        max-width: 800px;
       }
 
       .projectLogo {
@@ -457,6 +461,18 @@ section#intro {
           width: 100%;
         }
       }
+
+      .homeContainer {
+        .homeWrapper {
+          #inner {
+            max-width: 520px;
+          }
+        }
+      }
+
+      .wrapper {
+        max-width: 950px;
+      }
     }
   }
 }
@@ -465,7 +481,7 @@ section#intro {
   .homeContainer {
     .homeWrapper {
       #inner {
-        max-width: 750px;
+        max-width: 560px;
       }
     }
   }
@@ -489,4 +505,9 @@ section#intro {
   .wrapper {
     max-width: 1400px;
   }
+}
+
+.CodeMirror {
+  margin-top: 20px;
+  max-height: 180px;
 }
