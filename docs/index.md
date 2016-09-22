@@ -6,6 +6,8 @@ id: home
 
 # What is Hack?
 
+<img src="./static/images/landing-page-hack-code-image.png" alt="Hack Code Example" align="middle" style="width: 500px;"/>
+
 Hack is a programming language for [HHVM](http://hhvm.com/). Hack reconciles the fast development cycle of a dynamically typed language with the discipline provided by static typing, while adding many features commonly found in other modern programming languages.
 
 Hack provides instantaneous type checking by incrementally checking your files as you edit them. It typically runs in less than 200 milliseconds, making it easy to integrate into your development workflow without introducing a noticeable delay.
