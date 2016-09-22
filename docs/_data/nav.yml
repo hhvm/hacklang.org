@@ -4,16 +4,32 @@
 
 - title: Tutorial
   href: /tutorial.html
-  category: support
+  category: tutorial
 
 - title: Docs
   href: http://docs.hhvm.com/hack/
-  category: docs
+  category: documentation
+
+- title: Spec
+  href: https://github.com/hhvm/hack-langspec
+  category: specifcation
 
 - title: GitHub
   href: http://github.com/facebook/hhvm
   category: github
 
+- title: Twitter
+  href: https://twitter.com/hacklang
+  category: twitter
+
 - title: HHVM
   href: http://hhvm.com/
   category: hhvm
+
+- title: Blog
+  href: http://hhvm.com/blog
+  category: hhvm-blog
+
+- title: IRC
+  href: http://webchat.freenode.net/?channels=hhvm
+  category: hhvm-irc
