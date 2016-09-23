@@ -415,6 +415,8 @@ section#intro {
         box-sizing: border-box;
         max-width: 460px;
         padding-right: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
       }
 
       .wrapper {
@@ -442,6 +444,20 @@ section#intro {
 }
 
 @media only screen and (min-width: 1024px) {
+  .homeContainer {
+    .homeWrapper {
+      #inner {
+        max-width: 480px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+    }
+  }
+
+  .wrapper {
+    max-width: 950px;
+  }
+
   .mainContainer {
     .mainWrapper {
       .post {
@@ -461,18 +477,6 @@ section#intro {
           width: 100%;
         }
       }
-
-      .homeContainer {
-        .homeWrapper {
-          #inner {
-            max-width: 520px;
-          }
-        }
-      }
-
-      .wrapper {
-        max-width: 950px;
-      }
     }
   }
 }
@@ -481,6 +485,8 @@ section#intro {
   .homeContainer {
     .homeWrapper {
       #inner {
+        padding-top: 40px;
+        padding-bottom: 40px;
         max-width: 560px;
       }
     }
@@ -495,7 +501,7 @@ section#intro {
   .homeContainer {
     .homeWrapper {
       #inner {
-        max-width: 1100px;
+        max-width: 640px;
         padding-bottom: 40px;
         padding-top: 40px;
       }
@@ -509,5 +515,5 @@ section#intro {
 
 .CodeMirror {
   margin-top: 20px;
-  max-height: 180px;
+  max-height: 240px;
 }
