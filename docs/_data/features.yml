@@ -1,22 +1,9 @@
-- title: Type Annotations
-  text: |
-        Type annotations allow for code to be explicitly typed on parameters, class member variables and return values.
-  image: images/landing-page-features-type-annotations.png
-
-- title: Generics
-  text: |
-        Generics allow classes and methods to be parameterized (i.e., a type associated when a class is instantiated or a method is called) in the same vein as statically type languages like C# and Java).
-  image: images/landing-page-features-generics.png
-
-- title: Nullable Types
-  text: |
-        Nullable Types are supported by Hack through use of the `?` operator. This introduces a safer way to deal with nulls and is very useful for primitive types that don’t generally allow null as one of their values, such as `bool` and `int` (using `?bool` and `?int` respectively). The operator can be used on any type or class.
-
-- title: Collections
-  text: |
-        Collections provide first class, built-in parameterized types such as Vector (an ordered, index-based list), Map (an ordered dictionary), Set (a list of unique values), and Pair (an index-based collection of exactly two elements).
-
-- title: Lambdas
-  text: |
-        Lambdas succinctly allow definition of first-class functions.
-  image: images/landing-page-features-lambdas.png
+# The features content is currently in index.md
+# If you are planning to replace anything in index.md with a gridblock or something...
+#    e.g., {% include content/gridblocks.html data_source=site.data.features imagealign="bottom"%}
+# .... then you can add items in here like:
+#
+#- title: Feature
+#  text: |
+#        Feature desc.
+#  image: images/optional-image.png
