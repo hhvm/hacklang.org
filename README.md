@@ -2,6 +2,10 @@
 
 This directory will contain the landing page and other documentation for [hacklang.org](http://hacklang.org). It will contain links to the [Hack user documentation over at docs.hhvm.com](http://docs.hhvm.com/hack) and other relevant places. [hacklang.org](http://hacklang.org) will be hosted on GitHub pages.
 
+### Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for details on how to add content.
+
 ### Run the Site Locally
 
 The requirements for running a GitHub pages site locally is described in [GitHub help](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/#requirements). The steps below summarize these steps.
