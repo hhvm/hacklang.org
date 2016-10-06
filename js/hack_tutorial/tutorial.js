@@ -17,6 +17,7 @@ var remove_comments = function (content) {
 
 (function () {
     var current = 0,
+        codeset = {17: false, 66: false, 78: false}, // ctrl, b, n
         passed_test = function(content) { return true; },
         prev_button = document.getElementById('prev_button'),
         next_button = document.getElementById('next_button'),
@@ -57,6 +58,32 @@ var remove_comments = function (content) {
           }
           resetState();
         });
+
+        // navigating with keys: ctrl-b for back, ctrl-n for next
+        window.addEventListener('keydown', function(e) {
+          if (e.keyCode in codeset) {
+            codeset[e.keyCode] = true;
+            if (codeset[17] && codeset[66]) {
+              current = (current <= 0) ? 0 : current - 1;
+              resetState();
+            } else if (codeset[17] && codeset[78]) {
+              if (current >= ft_exercises.length - 1) {
+                current = ft_exercises.length;
+                editor.setValue("// Congratulations! You are done!");
+              } else {
+                current++;
+              }
+              resetState();
+            }
+          }
+        });
+
+        window.addEventListener('keyup', function(e) {
+          if (e.keyCode in codeset) {
+            codeset[e.keyCode] = false;
+          }
+        });
+
 
     editor.setValue(ft_exercises[current].content);
     resetState();

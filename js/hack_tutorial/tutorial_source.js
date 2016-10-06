@@ -8,6 +8,8 @@ ft_exercises = Array(
 \n\
 \n\
 /************ Click 'Next' to get started! *********/\n\
+\n\
+/************ You can use buttons OR `ctrl-b` and `ctrl-n` to navigate *********/\n\
 ", check:(function (x) { var content = remove_comments(x);return (true);})}, {content:"<?php\n\
 // ^-- FIXME: replace <?php with <?hh\n\
 \n\
