@@ -10,7 +10,7 @@ Hack is a programming language for [HHVM](http://hhvm.com/). Hack reconciles the
 
 Hack provides instantaneous type checking by incrementally checking your files as you edit them. It typically runs in less than 200 milliseconds, making it easy to integrate into your development workflow without introducing a noticeable delay.
 
-The following are some of the important language features of Hack. For more information, see the [full documentation](http://docs.hhvm.com/hack/), or follow through the quick [interactive tutorial](http://hacklang.org/tutorial).
+The following are some of the important language features of Hack. For more information, see the [full documentation](http://docs.hhvm.com/hack/), or follow through the quick, [interactive tutorial](http://hacklang.org/tutorial).
 
 ## Type Annotations
 
