@@ -2,7 +2,7 @@
 layout: tutorial
 title: Hack Tutorial
 id: hack-tutorial
-category: tutorial
+category: top-level
 ---
 
 ## Hack Tutorial
