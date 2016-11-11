@@ -1,6 +1,6 @@
 - title: Install
   href: http://docs.hhvm.com/hack/getting-started/getting-started
-  category: install
+  category: external
 
 - title: Tutorial
   href: /tutorial.html
@@ -8,28 +8,31 @@
 
 - title: Docs
   href: http://docs.hhvm.com/hack/
-  category: documentation
+  category: external
 
 - title: Spec
   href: https://github.com/hhvm/hack-langspec
-  category: specifcation
+  category: external
 
 - title: GitHub
   href: http://github.com/facebook/hhvm
-  category: github
+  category: external
 
 - title: Twitter
   href: https://twitter.com/hacklang
-  category: twitter
+  category: external
 
 - title: HHVM
   href: http://hhvm.com/
-  category: hhvm
+  category: external
 
 - title: Blog
   href: http://hhvm.com/blog
-  category: hhvm-blog
+  category: external
 
 - title: IRC
   href: http://webchat.freenode.net/?channels=hhvm
-  category: hhvm-irc
+  category: external
+
+# Use external for external links not associated with the paths of the current site.
+# If a category is external, site urls, for example, are not prepended to the href, etc.
