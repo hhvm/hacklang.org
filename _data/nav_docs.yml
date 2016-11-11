@@ -1,7 +1,11 @@
-- title: Quick Start
+- title: Grouping 1
   items:
-  - id: getting-started
   - id: hello-world
-- title: Another Doc Group
-  items:
-  - id: making-changes
+
+# n title:, 1 items: per title:, n id: per items:
+# - title: A
+#   items:
+#   - id: B
+#   - id: C
+# - title: D
+#   - id: E
