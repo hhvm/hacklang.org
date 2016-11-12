@@ -233,7 +233,7 @@ function test(): void {\n\
   $x->add1()->print_count();\n\
 }\n\
 ", check:(function (x) { var content = remove_comments(x);return (
-content.match(/Store.*string.*/)
+content.match(/add1.*this.*/)
 );})}, {content:"<?hh\n\
 \n\
 // When a type is too long, you can use a type alias.\n\
