@@ -323,6 +323,9 @@ class MyBaseClass {\n\
 class MyDerivedClass extends MyBaseClass {\n\
   /* <<Override>> is used to specify that get_user has been inherited.\n\
    * When that's not the case, Hack gives an error.\n\
+   * If <<Override>> is ommited, Hack complains that the child class\n\
+   * reimplements a method defined in it's superclass, get_user, which\n\
+   * isn't allowed (without specifying <<Override>>)\n\
    */\n\
   <<Override>> public function get_user(): MyUser {\n\
     return new MyUser();\n\
