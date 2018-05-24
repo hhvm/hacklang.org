@@ -50,7 +50,7 @@ class Footer extends React.Component {
               Follow @{this.props.config.twitterUsername}
             </a>
           )}
-          <a href={this.props.config.repoUrl} target="_blank">
+          <a href={`https://github.com/${this.props.config.organizationName}/${this.props.config.projectName}`} target="_blank">
             Contribute to this website
           </a>
         </section>
