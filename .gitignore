@@ -18,4 +18,6 @@ website/build/
 website/yarn.lock
 website/node_modules
 website/i18n/*
+website/package-lock.json
+website/yarn-error.log
 !website/i18n/en.json
