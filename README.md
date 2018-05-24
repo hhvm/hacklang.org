@@ -10,7 +10,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for details on how to add or modify con
 
 [hacklang.org](http://hacklang.org) uses [Docusaurus](https://docusaurus.io).
 
-1. Fork and clone that repo.
+1. Clone this repo (or if you are planning to contribute, fork this repo and clone the fork).
 1. `cd website`
 1. `yarn install`
 1. `yarn start`
