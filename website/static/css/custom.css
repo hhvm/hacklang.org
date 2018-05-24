@@ -1,0 +1,58 @@
+/* your custom css */
+
+.hljs {
+  background: #C6DEFF;
+}
+
+.CodeMirror {
+  font-size: 15px;
+  border: 1px solid #000;
+  width: 438px;
+  height: 246px!important;
+}
+
+
+#tutorial table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+#tutorial table td {
+  vertical-align: middle;
+}
+#tutorial table td {
+  width: 33%;
+}
+#tutorial table td#count_box {
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+  width: 34%;
+}
+#tutorial table td.passed {
+  background: #aaffaa
+}
+#tutorial table td.rightcell {
+  text-align: right;
+}
+#tutorial table button {
+  margin: 0;
+  background: #fd8724;
+}
+#tutorial #passed_box {
+  color: #226622;
+}
+#tutorial .CodeMirror {
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 400px!important;
+}
+
+._nospin_ {}
+._spin_ {
+  background-image: url(spinner.gif)!important;
+  background-size: 36px 36px!important;
+  background-repeat: no-repeat!important;
+  background-position: 100% 0!important;
+}

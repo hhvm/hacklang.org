@@ -1,9 +1,0 @@
-# The features content is currently in index.md
-# If you are planning to replace anything in index.md with a gridblock or something...
-#    e.g., {% include content/gridblocks.html data_source=site.data.features imagealign="bottom"%}
-# .... then you can add items in here like:
-#
-#- title: Feature
-#  text: |
-#        Feature desc.
-#  image: images/optional-image.png
