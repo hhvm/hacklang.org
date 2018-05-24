@@ -8,6 +8,7 @@ _site
 *~
 
 node_modules
+yarn-error.log
 
 lib/core/metadata.js
 lib/core/MetadataBlog.js

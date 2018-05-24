@@ -122,27 +122,18 @@ class Index extends React.Component {
                   content: (
                     `Hack reconciles the fast development cycle of a dynamically typed language with the discipline provided by static typing, while adding many features commonly found in other modern programming languages.`
                   ),
-                  image: `${siteConfig.baseUrl}img/speed.svg`,
-                  imageAlign: "top",
-                  imageAlt: "Fast Development",
                   title: "Fast Development",
                 },
                 {
                   content: (
                     `Hack provides instantaneous type checking by incrementally checking your files as you edit them. It typically runs in less than 200 milliseconds, making it easy to integrate into your development workflow without introducing a noticeable delay.`
                   ),
-                  image: `${siteConfig.baseUrl}img/checkmark.svg`,
-                  imageAlign: "top",
-                  imageAlt: "Type Checking",
                   title: "Type Checking",
                 },
                 {
                   content: (
                     `Hack is built specifically for [HHVM](http://hhvm.com), a high performance runtime for your Hack applications.`
                   ),
-                  image: `${siteConfig.baseUrl}img/hhvm.svg`,
-                  imageAlign: "top",
-                  imageAlt: "HHVM",
                   title: "Built for HHVM",
                 }
               ]}
