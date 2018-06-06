@@ -90,9 +90,7 @@ class HomeSplash extends React.Component {
                     <Button href='https://github.com/facebook/hhvm/hack/'>
                       GitHub
                     </Button>
-                    <Button href={`
-                        ${siteConfig.baseUrl}/tutorial.html
-                        `}>
+                    <Button href='tutorial.html'>
                       Tutorial
                     </Button>
                   </div>
