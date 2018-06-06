@@ -91,7 +91,7 @@ class HomeSplash extends React.Component {
                       GitHub
                     </Button>
                     <Button href={`
-                        ${siteConfig.baseUrl}${this.props.language}/tutorial.html
+                        ${siteConfig.baseUrl}/tutorial.html
                         `}>
                       Tutorial
                     </Button>
