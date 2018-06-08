@@ -87,7 +87,7 @@ class HomeSplash extends React.Component {
                       href='https://docs.hhvm.com/hhvm/getting-started/getting-started'>
                       Get Started
                     </Button>
-                    <Button href='https://github.com/facebook/hhvm/hack/'>
+                    <Button href='https://github.com/facebook/hhvm/tree/master/hphp/hack'>
                       GitHub
                     </Button>
                     <Button href='tutorial.html'>
