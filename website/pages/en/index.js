@@ -205,7 +205,7 @@ class Index extends React.Component {
                 <div className="blockImage">
                   <div>
                     <MarkdownBlock>
-                      {typeAnnotationExample}
+                      {genericsExample}
                     </MarkdownBlock>
                   </div>
                 </div>
