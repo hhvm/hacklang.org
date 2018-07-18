@@ -41,7 +41,7 @@ const siteConfig = {
       label: 'Spec',
     },
     {
-      href: 'http://github.com/facebook/hhvm',
+      href: 'https://github.com/facebook/hhvm/tree/master/hphp/hack',
       label: 'GitHub',
     },
     {
