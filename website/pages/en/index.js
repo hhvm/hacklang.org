@@ -84,7 +84,7 @@ class HomeSplash extends React.Component {
                 <div className="promoRow">
                   <div className="pluginRowBlock">
                     <Button
-                      href='https://docs.hhvm.com/hhvm/getting-started/getting-started'>
+                      href='https://docs.hhvm.com/hack/getting-started/getting-started'>
                       Get Started
                     </Button>
                     <Button href='https://github.com/facebook/hhvm/tree/master/hphp/hack'>
