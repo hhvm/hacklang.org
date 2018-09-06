@@ -37,10 +37,6 @@ const siteConfig = {
       label: 'Docs',
     },
     {
-      href: 'https://github.com/hhvm/hack-langspec',
-      label: 'Spec',
-    },
-    {
       href: 'https://github.com/facebook/hhvm/tree/master/hphp/hack',
       label: 'GitHub',
     },
