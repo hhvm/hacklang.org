@@ -10,7 +10,7 @@
 
 const siteConfig = {
   title: 'Hack' /* title for your website */,
-  tagline: 'Programming Productivity Without Breaking Things',
+  tagline: 'Programming Productivity While Breaking Things',
   url: 'https://hacklang.org' /* your website url */,
   baseUrl: '/' /* base url for your project */,
   // For github.io type URLs, you would set the url and baseUrl like:
