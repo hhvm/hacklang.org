@@ -4,17 +4,21 @@
     "next": "Next",
     "previous": "Previous",
     "tagline": "Programming Productivity Without Breaking Things",
-    "Install": "Install",
-    "Tutorial": "Tutorial",
-    "Docs": "Docs",
-    "GitHub": "GitHub",
-    "Twitter": "Twitter",
-    "HHVM": "HHVM",
-    "Blog": "Blog",
-    "IRC": "IRC",
-    "Docusaurus": "Docusaurus",
-    "First Category": "First Category",
-    "Second Category": "Second Category"
+    "docs": {},
+    "links": {
+      "Install": "Install",
+      "Docs": "Docs",
+      "GitHub": "GitHub",
+      "Twitter": "Twitter",
+      "HHVM": "HHVM",
+      "Blog": "Blog",
+      "IRC": "IRC"
+    },
+    "categories": {
+      "Docusaurus": "Docusaurus",
+      "First Category": "First Category",
+      "Second Category": "Second Category"
+    }
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",
