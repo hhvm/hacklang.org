@@ -87,12 +87,6 @@ class HomeSplash extends React.Component {
                       href='https://docs.hhvm.com/hack/getting-started/getting-started'>
                       Get Started
                     </Button>
-                    <Button href='https://github.com/facebook/hhvm/tree/master/hphp/hack'>
-                      GitHub
-                    </Button>
-                    <Button href='tutorial.html'>
-                      Tutorial
-                    </Button>
                   </div>
                 </div>
               </div>
@@ -140,34 +134,6 @@ class Index extends React.Component {
           </Container>
           <Container padding={["bottom", "top"]} background="light">
             <div className="gridBlock">
-              <div className="blockElement imageAlignSide twoByGridBlock">
-                <div className="blockContent">
-                  <h2>
-                    Try it out!
-                  </h2>
-                  <div>
-                    <MarkdownBlock>
-                      There is a type mismatch on the right. Try and fix the error.
-                    </MarkdownBlock>
-                  </div>
-                </div>
-                <div className="blockImage" id="hack_demo">
-                  <link rel='stylesheet' id='codemirror/lib/codemirror.css-css'  href={siteConfig.baseUrl + 'js/js/hack_tutorial/codemirror/lib/codemirror.css?ver=3.20'} type='text/css' media='' />
-                  <link rel='stylesheet' id='codemirror/addon/lint/lint.css-css' href={siteConfig.baseUrl + 'js/hack_tutorial/codemirror/addon/lint/lint.css?ver=3.20'} type='text/css' media='' />
-                  <link rel='stylesheet' id='codemirror/addon/hint/show-hint.css-css'  href={siteConfig.baseUrl + 'js/hack_tutorial/codemirror/addon/hint/show-hint.css?ver=3.20'} type='text/css' media='' />
-                  <script type='text/javascript' src={siteConfig.baseUrl + 'js/hack_tutorial/codemirror/lib/codemirror.js?ver=3.20'}></script>
-                  <script type='text/javascript' src={siteConfig.baseUrl + 'js/hack_tutorial/codemirror/mode/clike/clike.js?ver=3.20'}></script>
-                  <script type='text/javascript' src={siteConfig.baseUrl + 'js/hack_tutorial/codemirror/mode/php/php.js?ver=3.20'}></script>
-                  <script type='text/javascript' src={siteConfig.baseUrl + 'js/hack_tutorial/codemirror/addon/lint/lint.js?ver=3.20'}></script>
-                  <script type='text/javascript' src={siteConfig.baseUrl + 'js/hack_tutorial/codemirror/addon/hint/show-hint.js?ver=3.20'}></script>
-                  <script type='text/javascript' src={siteConfig.baseUrl + 'js/hack_tutorial/hack_demo.js?ver=0.22'}></script>
-                  <script>HACK_DEMO(`js/hack_tutorial/`);</script>
-                </div>
-              </div>
-            </div>
-          </Container>
-          <Container padding={["bottom", "top"]}>
-            <div className="gridBlock">
               <div className="blockElement imageAlignSide imageAlignLeft twoByGridBlock">
                 <div className="blockImage">
                   <div>
@@ -189,7 +155,7 @@ class Index extends React.Component {
               </div>
             </div>
           </Container>
-          <Container padding={["bottom", "top"]} background="light">
+          <Container padding={["bottom", "top"]}>
             <div className="gridBlock">
               <div className="blockElement imageAlignSide twoByGridBlock">
                 <div className="blockContent">
@@ -212,7 +178,7 @@ class Index extends React.Component {
               </div>
             </div>
           </Container>
-          <Container padding={["bottom", "top"]}>
+          <Container padding={["bottom", "top"]} background="light">
             <div className="gridBlock">
               <div className="blockElement imageAlignSide imageAlignLeft twoByGridBlock">
                 <div className="blockImage">
