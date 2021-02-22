@@ -164,7 +164,7 @@ class Index extends React.Component {
                   </h2>
                   <div>
                     <MarkdownBlock>
-                      Generics allow classes and methods to be parameterized (i.e., a type associated when a class is instantiated or a method is called) in the same vein as statically typed languages like C# and Java).
+                      Generics allow classes and methods to be parameterized (i.e., a type associated when a class is instantiated or a method is called in the same vein as statically typed languages like C# and Java).
                     </MarkdownBlock>
                   </div>
                 </div>
