@@ -10,7 +10,7 @@
 
 const siteConfig = {
   title: "Hack" /* title for your website */,
-  /* tagline:  "foo" */,
+  /* tagline:  "foo" , */
   disableTitleTagline: true,
   url: "https://hacklang.org" /* your website url */,
   baseUrl: "/" /* base url for your project */,
