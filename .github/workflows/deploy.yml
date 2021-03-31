@@ -52,4 +52,4 @@ jobs:
           else
           npm i
           fi
-          USE_SSH=true npm run publish-github-pages
+          USE_SSH=true npm run publish-gh-pages
