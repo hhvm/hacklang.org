@@ -15,7 +15,6 @@ const translate = require("../../server/translate.js").translate;
 
 const pre = "```";
 const asyncExample= `${pre}hack
-<?hh
   async function helloWorld(): Awaitable<string> {
     return "Hello World"; // simple, trivial example
   }
@@ -29,21 +28,19 @@ const asyncExample= `${pre}hack
   }
 ${pre}`;
 const genericsExample = `${pre}hack
-<?hh
-class Box<T> {
-  protected T $data;
+  class Box<T> {
+    protected T $data;
 
-  public function __construct(T $data) {
-    $this->data = $data;
-  }
+    public function __construct(T $data) {
+      $this->data = $data;
+    }
 
-  public function getData(): T {
-    return $this->data;
+    public function getData(): T {
+      return $this->data;
+    }
   }
-}
 ${pre}`;
 const XHPExample = `${pre}hack
-<?hh
   // Traditional: HTML elements require quotation marks
   $user_name = 'Fred';
   echo "<tt>Hello <strong>$user_name</strong></tt>";
@@ -151,10 +148,10 @@ class Index extends React.Component {
                   </h2>
                   <div>
                     <MarkdownBlock>
-                      **Async is not multithreading**. HHVM executes a program's code in one main request thread.
+                      **[Asynchronous operations](https://docs.hhvm.com/hack/asynchronous-operations/introduction)** allow _cooperative multi-tasking_. Code that utilizes the Async Infra can hide I/O latency and data fetching, minimizing the downtime a program has to be stalled for I/O or similar operations.
                     </MarkdownBlock>
                     <MarkdownBlock>
-                     **[Asynchronous operations](https://docs.hhvm.com/hack/asynchronous-operations/introduction)** allow _cooperative multi-tasking_. Code that utilizes the Async Infra can hide I/O latency and data fetching, minimizing the downtime a program has to be stalled for I/O or similar operations.
+                      **Async is not multithreading**. HHVM executes a program's code in one main request thread.
                     </MarkdownBlock>
                   </div>
                 </div>
@@ -213,14 +210,20 @@ class Index extends React.Component {
               </div>
             </div>
           </Container>
-          <Container padding={["bottom", "top"]}>
+          <Container padding={["bottom"]}>
             <div className="gridBlock">
-              <div className="blockElement imageAlignSide twoByGridBlock">
+              <div className="blockElement">
                 <div className="blockContent">
                   <h2>
                     Collaboration, Research, and Usage
                   </h2>
                   <div>
+                    <MarkdownBlock>
+                      HHVM and the Hack language are in active development. We are moving fast, making changes daily and releasing often. If you notice a regression in the typechecker or the runtime, please **[open issues](https://github.com/facebook/hhvm/issues/new)** when you find them.
+                    </MarkdownBlock>
+                    <MarkdownBlock>
+                      Learn about ongoing research and collaborations:
+                    </MarkdownBlock>
                     <MarkdownBlock>
                       * **[Jump-Start](https://engineering.fb.com/2021/03/03/developer-tools/hhvm-jump-start/)**: Jump-Start improves the performance of virtual machines at scale and has successfully been implemented in the HipHop Virtual Machine (HHVM), which powers not only Facebook.com but also many other sites across the web.
                     </MarkdownBlock>
