@@ -14,16 +14,19 @@ const siteConfig = require(process.cwd() + "/siteConfig.js");
 const translate = require("../../server/translate.js").translate;
 
 const pre = "```";
-const typeAnnotationExample= `${pre}hack
+const asyncExample= `${pre}hack
 <?hh
-class MyClass {
-  const int MyConst = 0;
-  private string $x = '';
-  public function increment(int $x): int {
-    $y = $x + 1;
-    return $y;
+  async function helloWorld(): Awaitable<string> {
+    return "Hello World"; // simple, trivial example
   }
-}
+
+  <<__EntryPoint>>
+  async function call_helloWorld(): Awaitable<void> {
+
+  $aw = helloWorld();
+  $result = await $aw; // Suspends until $aw completes
+  echo $result; // "Hello World"
+  }
 ${pre}`;
 const genericsExample = `${pre}hack
 <?hh
@@ -39,16 +42,16 @@ class Box<T> {
   }
 }
 ${pre}`;
-const lambdaExample = `${pre}hack
+const XHPExample = `${pre}hack
 <?hh
-function foo(): (function(string): string) {
-  $x = 'bar';
-  return $y ==> $x . $y;
-}
-function test(): void {
-  $fn = foo();
-  echo $fn('baz'); // barbaz
-}
+  // Traditional: HTML elements require quotation marks
+  $user_name = 'Fred';
+  echo "<tt>Hello <strong>$user_name</strong></tt>";
+
+  // XHP: Hack understands HTML syntax
+  $user_name = 'Andrew';
+  $xhp = <tt>Hello <strong>{$user_name}</strong></tt>;
+  echo await $xhp->toStringAsync();
 ${pre}`;
 class Button extends React.Component {
   render() {
@@ -124,7 +127,7 @@ class Index extends React.Component {
                 },
                 {
                   content: (
-                    `Hack is built specifically for [HHVM](http://hhvm.com), a high performance runtime for your Hack applications.`
+                    `Hack is built specifically for **[HHVM](http://hhvm.com)**, a high performance runtime for your Hack applications.`
                   ),
                   title: "Built for HHVM",
                 }
@@ -138,17 +141,20 @@ class Index extends React.Component {
                 <div className="blockImage">
                   <div>
                     <MarkdownBlock>
-                      {typeAnnotationExample}
+                      {asyncExample}
                     </MarkdownBlock>
                   </div>
                 </div>
                 <div className="blockContent">
                   <h2>
-                    Type Annotations
+                    Async
                   </h2>
                   <div>
                     <MarkdownBlock>
-                      Type annotations allow for code to be explicitly typed on parameters, class member variables and return values.
+                      **Async is not multithreading**. HHVM executes a program's code in one main request thread.
+                    </MarkdownBlock>
+                    <MarkdownBlock>
+                     **[Asynchronous operations](https://docs.hhvm.com/hack/asynchronous-operations/introduction)** allow _cooperative multi-tasking_. Code that utilizes the Async Infra can hide I/O latency and data fetching, minimizing the downtime a program has to be stalled for I/O or similar operations.
                     </MarkdownBlock>
                   </div>
                 </div>
@@ -164,7 +170,10 @@ class Index extends React.Component {
                   </h2>
                   <div>
                     <MarkdownBlock>
-                      Generics allow classes and methods to be parameterized (i.e., a type associated when a class is instantiated or a method is called in the same vein as statically typed languages like C# and Java).
+                      **[Generics](https://docs.hhvm.com/hack/generics/some-basics)** allow classes and methods to be parameterized to any set of types, all while preserving type safety, and supports both **_[generic covariance and contravariance](https://docs.hhvm.com/hack/generics/variance)_** on a type parameter.
+                    </MarkdownBlock>
+                    <MarkdownBlock>
+                      You can also create **_[Reified Generics](https://docs.hhvm.com/hack/generics/reified-generics)_**—Generics with type information accessible at runtime.
                     </MarkdownBlock>
                   </div>
                 </div>
@@ -184,17 +193,39 @@ class Index extends React.Component {
                 <div className="blockImage">
                   <div>
                     <MarkdownBlock>
-                      {lambdaExample}
+                      {XHPExample}
                     </MarkdownBlock>
                   </div>
                 </div>
                 <div className="blockContent">
                   <h2>
-                    Lambdas
+                    XHP
                   </h2>
                   <div>
                     <MarkdownBlock>
-                      Lambdas succinctly allow definition of first-class functions.
+                      **[XHP](https://docs.hhvm.com/hack/XHP/introduction)** provides a native XML-like representation of output (e.g., HTML) and allows UI code to be typechecked, automatically avoiding several common issues like cross-site scripting (XSS) and double-escaping.
+                    </MarkdownBlock>
+                    <MarkdownBlock>
+                      XHP is _safe by default_: All variables are automatically escaped in a context-appropriate way.
+                    </MarkdownBlock>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Container>
+          <Container padding={["bottom", "top"]}>
+            <div className="gridBlock">
+              <div className="blockElement imageAlignSide twoByGridBlock">
+                <div className="blockContent">
+                  <h2>
+                    Collaboration, Research, and Usage
+                  </h2>
+                  <div>
+                    <MarkdownBlock>
+                      * **[Jump-Start](https://engineering.fb.com/2021/03/03/developer-tools/hhvm-jump-start/)**: Jump-Start improves the performance of virtual machines at scale and has successfully been implemented in the HipHop Virtual Machine (HHVM), which powers not only Facebook.com but also many other sites across the web.
+                    </MarkdownBlock>
+                    <MarkdownBlock>
+                      * **[Zoncolan](https://engineering.fb.com/2019/08/15/security/zoncolan/)**: Facebook’s web codebase currently contains more than 100 million lines of Hack code, and changes thousands of times per day. With Zoncolan and its static analysis capabilities, security engineers scale their work by automatically examining Hack code and proactively detecting potentially dangerous security or privacy issues.
                     </MarkdownBlock>
                   </div>
                 </div>
