@@ -43,7 +43,7 @@ ${pre}`;
 const XHPExample = `${pre}hack
   // Traditional: HTML elements require quotation marks
   $user_name = 'Fred';
-  echo "<tt>Hello <strong>$user_name</strong></tt>";
+  echo "<tt>Hello <strong>$user_name</tt></strong>";
 
   // XHP: Hack understands HTML syntax
   $user_name = 'Andrew';
