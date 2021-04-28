@@ -15,7 +15,7 @@ const translate = require("../../server/translate.js").translate;
 
 const pre = "```";
 const asyncExample= `${pre}hack
-  async function helloWorld(): Awaitable<string> {
+  async function hello_world(): Awaitable<string> {
     return "Hello World"; // simple, trivial example
   }
 
