@@ -20,9 +20,9 @@ const asyncExample= `${pre}hack
   }
 
   <<__EntryPoint>>
-  async function call_helloWorld(): Awaitable<void> {
+  async function call_hello_world(): Awaitable<void> {
 
-  $aw = helloWorld();
+  $aw = hello_world();
   $result = await $aw; // Suspends until $aw completes
   echo $result; // "Hello World"
   }
@@ -41,11 +41,11 @@ const genericsExample = `${pre}hack
   }
 ${pre}`;
 const XHPExample = `${pre}hack
-  // Traditional: HTML elements require quotation marks
+  // Traditional: Risky and easy to misplace tags!
   $user_name = 'Fred';
   echo "<tt>Hello <strong>$user_name</tt></strong>";
 
-  // XHP: Hack understands HTML syntax
+  // XHP: Typechecked, well-formed, and secure
   $user_name = 'Andrew';
   $xhp = <tt>Hello <strong>{$user_name}</strong></tt>;
   echo await $xhp->toStringAsync();
@@ -150,9 +150,6 @@ class Index extends React.Component {
                     <MarkdownBlock>
                       **[Asynchronous operations](https://docs.hhvm.com/hack/asynchronous-operations/introduction)** allow _cooperative multi-tasking_. Code that utilizes the Async Infra can hide I/O latency and data fetching, minimizing the downtime a program has to be stalled for I/O or similar operations.
                     </MarkdownBlock>
-                    <MarkdownBlock>
-                      **Async is not multithreading**. HHVM executes a program's code in one main request thread.
-                    </MarkdownBlock>
                   </div>
                 </div>
               </div>
@@ -167,10 +164,7 @@ class Index extends React.Component {
                   </h2>
                   <div>
                     <MarkdownBlock>
-                      **[Generics](https://docs.hhvm.com/hack/generics/some-basics)** allow classes and methods to be parameterized to any set of types, all while preserving type safety, and supports both **_[generic covariance and contravariance](https://docs.hhvm.com/hack/generics/variance)_** on a type parameter.
-                    </MarkdownBlock>
-                    <MarkdownBlock>
-                      You can also create **_[Reified Generics](https://docs.hhvm.com/hack/generics/reified-generics)_**—Generics with type information accessible at runtime.
+                      Hack supports a rich set of **[generic types](https://docs.hhvm.com/hack/types/generic-types)**, including **[type parameters](https://docs.hhvm.com/hack/generics/type-parameters)**, **[constraints](https://docs.hhvm.com/hack/generics/type-constraints)**, associated **[type constants](https://docs.hhvm.com/hack/classes/type-constants-revisited)** and even **[reification](https://docs.hhvm.com/hack/generics/reified-generics)**.
                     </MarkdownBlock>
                   </div>
                 </div>
@@ -222,7 +216,7 @@ class Index extends React.Component {
                       HHVM and the Hack language are in active development. We are moving fast, making changes daily and releasing often. If you notice a regression in the typechecker or the runtime, please **[open issues](https://github.com/facebook/hhvm/issues/new)** when you find them.
                     </MarkdownBlock>
                     <MarkdownBlock>
-                      Learn about ongoing research and collaborations:
+                      Academic literature and recent research can be found below.
                     </MarkdownBlock>
                     <MarkdownBlock>
                       * **[Jump-Start](https://engineering.fb.com/2021/03/03/developer-tools/hhvm-jump-start/)**: Jump-Start improves the performance of virtual machines at scale and has successfully been implemented in the HipHop Virtual Machine (HHVM), which powers not only Facebook.com but also many other sites across the web.
