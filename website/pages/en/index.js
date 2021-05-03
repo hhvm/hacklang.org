@@ -14,41 +14,50 @@ const siteConfig = require(process.cwd() + "/siteConfig.js");
 const translate = require("../../server/translate.js").translate;
 
 const pre = "```";
-const typeAnnotationExample= `${pre}hack
-<?hh
-class MyClass {
-  const int MyConst = 0;
-  private string $x = '';
-  public function increment(int $x): int {
-    $y = $x + 1;
-    return $y;
+const asyncExample= `${pre}hack
+<<__EntryPoint>>
+  async function my_example(): Awaitable<void> {
+    $user_ids = vec[1, 2, 3];
+
+    // Initiate all the database requests together,
+    // so we spend less time waiting.
+    $user_names = await Vec\map_async(
+      $user_ids,
+      async ($id) ==> await fetch_user_name($id),
+    );
+    // Execution continues after requests complete.
+
+    echo Str\join($user_names, ", ");
   }
-}
+
+  async function fetch_user_name(int $_):
+    Awaitable<string> {
+      // This could be a database request.
+      return "";
+    }
 ${pre}`;
 const genericsExample = `${pre}hack
-<?hh
-class Box<T> {
-  protected T $data;
+  class Box<T> {
+    protected T $data;
 
-  public function __construct(T $data) {
-    $this->data = $data;
-  }
+    public function __construct(T $data) {
+      $this->data = $data;
+    }
 
-  public function getData(): T {
-    return $this->data;
+    public function getData(): T {
+      return $this->data;
+    }
   }
-}
 ${pre}`;
-const lambdaExample = `${pre}hack
-<?hh
-function foo(): (function(string): string) {
-  $x = 'bar';
-  return $y ==> $x . $y;
-}
-function test(): void {
-  $fn = foo();
-  echo $fn('baz'); // barbaz
-}
+const XHPExample = `${pre}hack
+  // Traditional: Risky and easy to misplace tags!
+  $user_name = 'Fred';
+  echo "<tt>Hello <strong>$user_name</tt></strong>";
+
+  // XHP: Typechecked, well-formed, and secure
+  $user_name = 'Andrew';
+  $xhp = <tt>Hello <strong>{$user_name}</strong></tt>;
+  echo await $xhp->toStringAsync();
 ${pre}`;
 class Button extends React.Component {
   render() {
@@ -124,7 +133,7 @@ class Index extends React.Component {
                 },
                 {
                   content: (
-                    `Hack is built specifically for [HHVM](http://hhvm.com), a high performance runtime for your Hack applications.`
+                    `Hack is built specifically for **[HHVM](http://hhvm.com)**, a high performance runtime for your Hack applications.`
                   ),
                   title: "Built for HHVM",
                 }
@@ -138,17 +147,17 @@ class Index extends React.Component {
                 <div className="blockImage">
                   <div>
                     <MarkdownBlock>
-                      {typeAnnotationExample}
+                      {asyncExample}
                     </MarkdownBlock>
                   </div>
                 </div>
                 <div className="blockContent">
                   <h2>
-                    Type Annotations
+                    Async
                   </h2>
                   <div>
                     <MarkdownBlock>
-                      Type annotations allow for code to be explicitly typed on parameters, class member variables and return values.
+                      **[Asynchronous operations](https://docs.hhvm.com/hack/asynchronous-operations/introduction)** allow _cooperative multi-tasking_. Async functions can combine I/O requests, making your code faster.
                     </MarkdownBlock>
                   </div>
                 </div>
@@ -164,7 +173,7 @@ class Index extends React.Component {
                   </h2>
                   <div>
                     <MarkdownBlock>
-                      Generics allow classes and methods to be parameterized (i.e., a type associated when a class is instantiated or a method is called in the same vein as statically typed languages like C# and Java).
+                      Hack supports a rich set of **[generic types](https://docs.hhvm.com/hack/types/generic-types)**, including **[type parameters](https://docs.hhvm.com/hack/generics/type-parameters)**, **[constraints](https://docs.hhvm.com/hack/generics/type-constraints)**, associated **[type constants](https://docs.hhvm.com/hack/classes/type-constants-revisited)** and even **[reification](https://docs.hhvm.com/hack/generics/reified-generics)**.
                     </MarkdownBlock>
                   </div>
                 </div>
@@ -184,17 +193,45 @@ class Index extends React.Component {
                 <div className="blockImage">
                   <div>
                     <MarkdownBlock>
-                      {lambdaExample}
+                      {XHPExample}
                     </MarkdownBlock>
                   </div>
                 </div>
                 <div className="blockContent">
                   <h2>
-                    Lambdas
+                    XHP
                   </h2>
                   <div>
                     <MarkdownBlock>
-                      Lambdas succinctly allow definition of first-class functions.
+                      **[XHP](https://docs.hhvm.com/hack/XHP/introduction)** provides a native XML-like representation of output (e.g., HTML) and allows UI code to be typechecked, automatically avoiding several common issues like cross-site scripting (XSS) and double-escaping.
+                    </MarkdownBlock>
+                    <MarkdownBlock>
+                      XHP is _safe by default_: All variables are automatically escaped in a context-appropriate way.
+                    </MarkdownBlock>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Container>
+          <Container padding={["bottom"]}>
+            <div className="gridBlock">
+              <div className="blockElement">
+                <div className="blockContent">
+                  <h2>
+                    Collaboration, Research, and Usage
+                  </h2>
+                  <div>
+                    <MarkdownBlock>
+                      HHVM and the Hack language are in active development. We are moving fast, making changes daily and releasing often. If you notice a regression in the typechecker or the runtime, please **[open issues](https://github.com/facebook/hhvm/issues/new)** when you find them.
+                    </MarkdownBlock>
+                    <MarkdownBlock>
+                      Academic literature and recent research can be found below.
+                    </MarkdownBlock>
+                    <MarkdownBlock>
+                      * **[Jump-Start](https://engineering.fb.com/2021/03/03/developer-tools/hhvm-jump-start/)**: Jump-Start improves the performance of virtual machines at scale and has successfully been implemented in the HipHop Virtual Machine (HHVM), which powers not only Facebook.com but also many other sites across the web.
+                    </MarkdownBlock>
+                    <MarkdownBlock>
+                      * **[Zoncolan](https://engineering.fb.com/2019/08/15/security/zoncolan/)**: Facebook’s web codebase currently contains more than 100 million lines of Hack code, and changes thousands of times per day. With Zoncolan and its static analysis capabilities, security engineers scale their work by automatically examining Hack code and proactively detecting potentially dangerous security or privacy issues.
                     </MarkdownBlock>
                   </div>
                 </div>
