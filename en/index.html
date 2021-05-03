@@ -3,41 +3,59 @@
 </span></div></div></div><div class="blockElement alignCenter threeByGridBlock"><div class="blockContent"><h2><div><span><p>Type Checking</p>
 </span></div></h2><div><span><p>Hack provides instantaneous type checking by incrementally checking your files as you edit them. It typically runs in less than 200 milliseconds, making it easy to integrate into your development workflow without introducing a noticeable delay.</p>
 </span></div></div></div><div class="blockElement alignCenter threeByGridBlock"><div class="blockContent"><h2><div><span><p>Built for HHVM</p>
-</span></div></h2><div><span><p>Hack is built specifically for <a href="http://hhvm.com">HHVM</a>, a high performance runtime for your Hack applications.</p>
-</span></div></div></div></div></div></div><div class="container lightBackground paddingBottom paddingTop"><div class="wrapper"><div class="gridBlock"><div class="blockElement imageAlignSide imageAlignLeft twoByGridBlock"><div class="blockImage"><div><div><span><pre><code class="hljs css language-hack"><span class="php"><span class="hljs-meta">&lt;?</span>hh
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> </span>{
-  <span class="hljs-keyword">const</span> int MyConst = <span class="hljs-number">0</span>;
-  <span class="hljs-keyword">private</span> string $x = <span class="hljs-string">''</span>;
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span><span class="hljs-params">(int $x)</span>: <span class="hljs-title">int</span> </span>{
-    $y = $x + <span class="hljs-number">1</span>;
-    <span class="hljs-keyword">return</span> $y;
-  }
-}
-</span></code></pre>
-</span></div></div></div><div class="blockContent"><h2>Type Annotations</h2><div><div><span><p>Type annotations allow for code to be explicitly typed on parameters, class member variables and return values.</p>
-</span></div></div></div></div></div></div></div><div class="container paddingBottom paddingTop"><div class="wrapper"><div class="gridBlock"><div class="blockElement imageAlignSide twoByGridBlock"><div class="blockContent"><h2>Generics</h2><div><div><span><p>Generics allow classes and methods to be parameterized (i.e., a type associated when a class is instantiated or a method is called in the same vein as statically typed languages like C# and Java).</p>
-</span></div></div></div><div class="blockImage"><div><div><span><pre><code class="hljs css language-hack"><span class="php"><span class="hljs-meta">&lt;?</span>hh
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Box</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
-  <span class="hljs-keyword">protected</span> T $data;
+</span></div></h2><div><span><p>Hack is built specifically for <strong><a href="http://hhvm.com">HHVM</a></strong>, a high performance runtime for your Hack applications.</p>
+</span></div></div></div></div></div></div><div class="container lightBackground paddingBottom paddingTop"><div class="wrapper"><div class="gridBlock"><div class="blockElement imageAlignSide imageAlignLeft twoByGridBlock"><div class="blockImage"><div><div><span><pre><code class="hljs css language-hack">&lt;&lt;__EntryPoint&gt;&gt;
+  async <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">my_example</span><span class="hljs-params">()</span>: <span class="hljs-title">Awaitable</span>&lt;<span class="hljs-title">void</span>&gt; </span>{
+    $user_ids = vec[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
 
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(T $data)</span> </span>{
-    <span class="hljs-keyword">$this</span>-&gt;data = $data;
+    <span class="hljs-comment">// Initiate all the database requests together,</span>
+    <span class="hljs-comment">// so we spend less time waiting.</span>
+    $user_names = await Vecmap_async(
+      $user_ids,
+      async ($id) ==&gt; await fetch_user_name($id),
+    );
+    <span class="hljs-comment">// Execution continues after requests complete.</span>
+
+    <span class="hljs-keyword">echo</span> Strjoin($user_names, <span class="hljs-string">", "</span>);
   }
 
-  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getData</span><span class="hljs-params">()</span>: <span class="hljs-title">T</span> </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;data;
+  async <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fetch_user_name</span><span class="hljs-params">(int $_)</span>:
+    <span class="hljs-title">Awaitable</span>&lt;<span class="hljs-title">string</span>&gt; </span>{
+      <span class="hljs-comment">// This could be a database request.</span>
+      <span class="hljs-keyword">return</span> <span class="hljs-string">""</span>;
+    }
+</code></pre>
+</span></div></div></div><div class="blockContent"><h2>Async</h2><div><div><span><p><strong><a href="https://docs.hhvm.com/hack/asynchronous-operations/introduction">Asynchronous operations</a></strong> allow <em>cooperative multi-tasking</em>. Async functions can combine I/O requests, making your code faster.</p>
+</span></div></div></div></div></div></div></div><div class="container paddingBottom paddingTop"><div class="wrapper"><div class="gridBlock"><div class="blockElement imageAlignSide twoByGridBlock"><div class="blockContent"><h2>Generics</h2><div><div><span><p>Hack supports a rich set of <strong><a href="https://docs.hhvm.com/hack/types/generic-types">generic types</a></strong>, including <strong><a href="https://docs.hhvm.com/hack/generics/type-parameters">type parameters</a></strong>, <strong><a href="https://docs.hhvm.com/hack/generics/type-constraints">constraints</a></strong>, associated <strong><a href="https://docs.hhvm.com/hack/classes/type-constants-revisited">type constants</a></strong> and even <strong><a href="https://docs.hhvm.com/hack/generics/reified-generics">reification</a></strong>.</p>
+</span></div></div></div><div class="blockImage"><div><div><span><pre><code class="hljs css language-hack">  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Box</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+    <span class="hljs-keyword">protected</span> T $data;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(T $data)</span> </span>{
+      <span class="hljs-keyword">$this</span>-&gt;data = $data;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getData</span><span class="hljs-params">()</span>: <span class="hljs-title">T</span> </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;data;
+    }
   }
-}
-</span></code></pre>
-</span></div></div></div></div></div></div></div><div class="container lightBackground paddingBottom paddingTop"><div class="wrapper"><div class="gridBlock"><div class="blockElement imageAlignSide imageAlignLeft twoByGridBlock"><div class="blockImage"><div><div><span><pre><code class="hljs css language-hack"><span class="php"><span class="hljs-meta">&lt;?</span>hh
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span>: <span class="hljs-params">(function<span class="hljs-params">(string)</span>: string)</span> </span>{
-  $x = <span class="hljs-string">'bar'</span>;
-  <span class="hljs-keyword">return</span> $y ==&gt; $x . $y;
-}
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span><span class="hljs-params">()</span>: <span class="hljs-title">void</span> </span>{
-  $fn = foo();
-  <span class="hljs-keyword">echo</span> $fn(<span class="hljs-string">'baz'</span>); <span class="hljs-comment">// barbaz</span>
-}
-</span></code></pre>
-</span></div></div></div><div class="blockContent"><h2>Lambdas</h2><div><div><span><p>Lambdas succinctly allow definition of first-class functions.</p>
+</code></pre>
+</span></div></div></div></div></div></div></div><div class="container lightBackground paddingBottom paddingTop"><div class="wrapper"><div class="gridBlock"><div class="blockElement imageAlignSide imageAlignLeft twoByGridBlock"><div class="blockImage"><div><div><span><pre><code class="hljs css language-hack">  <span class="hljs-comment">// Traditional: Risky and easy to misplace tags!</span>
+  $user_name = <span class="hljs-string">'Fred'</span>;
+  <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;tt&gt;Hello &lt;strong&gt;$user_name&lt;/tt&gt;&lt;/strong&gt;"</span>;
+
+  <span class="hljs-comment">// XHP: Typechecked, well-formed, and secure</span>
+  $user_name = <span class="hljs-string">'Andrew'</span>;
+  $xhp = &lt;tt&gt;Hello &lt;strong&gt;{$user_name}&lt;/strong&gt;&lt;/tt&gt;;
+  <span class="hljs-keyword">echo</span> await $xhp-&gt;toStringAsync();
+</code></pre>
+</span></div></div></div><div class="blockContent"><h2>XHP</h2><div><div><span><p><strong><a href="https://docs.hhvm.com/hack/XHP/introduction">XHP</a></strong> provides a native XML-like representation of output (e.g., HTML) and allows UI code to be typechecked, automatically avoiding several common issues like cross-site scripting (XSS) and double-escaping.</p>
+</span></div><div><span><p>XHP is <em>safe by default</em>: All variables are automatically escaped in a context-appropriate way.</p>
+</span></div></div></div></div></div></div></div><div class="container paddingBottom"><div class="wrapper"><div class="gridBlock"><div class="blockElement"><div class="blockContent"><h2>Collaboration, Research, and Usage</h2><div><div><span><p>HHVM and the Hack language are in active development. We are moving fast, making changes daily and releasing often. If you notice a regression in the typechecker or the runtime, please <strong><a href="https://github.com/facebook/hhvm/issues/new">open issues</a></strong> when you find them.</p>
+</span></div><div><span><p>Academic literature and recent research can be found below.</p>
+</span></div><div><span><ul>
+<li><strong><a href="https://engineering.fb.com/2021/03/03/developer-tools/hhvm-jump-start/">Jump-Start</a></strong>: Jump-Start improves the performance of virtual machines at scale and has successfully been implemented in the HipHop Virtual Machine (HHVM), which powers not only Facebook.com but also many other sites across the web.</li>
+</ul>
+</span></div><div><span><ul>
+<li><strong><a href="https://engineering.fb.com/2019/08/15/security/zoncolan/">Zoncolan</a></strong>: Facebook’s web codebase currently contains more than 100 million lines of Hack code, and changes thousands of times per day. With Zoncolan and its static analysis capabilities, security engineers scale their work by automatically examining Hack code and proactively detecting potentially dangerous security or privacy issues.</li>
+</ul>
 </span></div></div></div></div></div></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/hack.svg" alt="Hack" width="66" height="58"/></a><a class="github-button" href="https://github.com/facebook/hhvm" data-icon="octicon-star" data-count-href="/facebook/hhvm/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><a href="https://twitter.com/hacklang" class="twitter-follow-button">Follow @hacklang</a><a href="https://github.com/hhvm/hacklang.org" target="_blank">Contribute to this website</a></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2021 Facebook Inc.</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
