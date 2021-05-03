@@ -148,7 +148,7 @@ class Index extends React.Component {
                   </h2>
                   <div>
                     <MarkdownBlock>
-                      **[Asynchronous operations](https://docs.hhvm.com/hack/asynchronous-operations/introduction)** allow _cooperative multi-tasking_. Code that utilizes the Async Infra can hide I/O latency and data fetching, minimizing the downtime a program has to be stalled for I/O or similar operations.
+                      **[Asynchronous operations](https://docs.hhvm.com/hack/asynchronous-operations/introduction)** allow _cooperative multi-tasking_. Async functions can combine I/O requests, making your code faster.
                     </MarkdownBlock>
                   </div>
                 </div>
