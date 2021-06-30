@@ -5,48 +5,49 @@
 </span></div></div></div><div class="blockElement alignCenter threeByGridBlock"><div class="blockContent"><h2><div><span><p>Built for HHVM</p>
 </span></div></h2><div><span><p>Hack is built specifically for <strong><a href="http://hhvm.com">HHVM</a></strong>, a high performance runtime for your Hack applications.</p>
 </span></div></div></div></div></div></div><div class="container lightBackground paddingBottom paddingTop"><div class="wrapper"><div class="gridBlock"><div class="blockElement imageAlignSide imageAlignLeft twoByGridBlock"><div class="blockImage"><div><div><span><pre><code class="hljs css language-hack">&lt;&lt;__EntryPoint&gt;&gt;
-  async <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">my_example</span><span class="hljs-params">()</span>: <span class="hljs-title">Awaitable</span>&lt;<span class="hljs-title">void</span>&gt; </span>{
-    $user_ids = vec[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+async <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">my_example</span><span class="hljs-params">()</span>: <span class="hljs-title">Awaitable</span>&lt;<span class="hljs-title">void</span>&gt; </span>{
+  $user_ids = vec[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
 
-    <span class="hljs-comment">// Initiate all the database requests together,</span>
-    <span class="hljs-comment">// so we spend less time waiting.</span>
-    $user_names = await Vecmap_async(
-      $user_ids,
-      async ($id) ==&gt; await fetch_user_name($id),
-    );
-    <span class="hljs-comment">// Execution continues after requests complete.</span>
+  <span class="hljs-comment">// Initiate all the database requests together,</span>
+  <span class="hljs-comment">// so we spend less time waiting.</span>
+  $user_names = await Vec\map_async(
+    $user_ids,
+    async ($id) ==&gt; await fetch_user_name($id),
+  );
+  <span class="hljs-comment">// Execution continues after requests complete.</span>
 
-    <span class="hljs-keyword">echo</span> Strjoin($user_names, <span class="hljs-string">", "</span>);
-  }
+  <span class="hljs-keyword">echo</span> Str\join($user_names, <span class="hljs-string">", "</span>);
+}
 
-  async <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fetch_user_name</span><span class="hljs-params">(int $_)</span>:
-    <span class="hljs-title">Awaitable</span>&lt;<span class="hljs-title">string</span>&gt; </span>{
-      <span class="hljs-comment">// This could be a database request.</span>
-      <span class="hljs-keyword">return</span> <span class="hljs-string">""</span>;
-    }
+async <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fetch_user_name</span><span class="hljs-params">(
+  int $_,
+)</span>: <span class="hljs-title">Awaitable</span>&lt;<span class="hljs-title">string</span>&gt; </span>{
+  <span class="hljs-comment">// This could be a database request.</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-string">""</span>;
+}
 </code></pre>
 </span></div></div></div><div class="blockContent"><h2>Async</h2><div><div><span><p><strong><a href="https://docs.hhvm.com/hack/asynchronous-operations/introduction">Asynchronous operations</a></strong> allow <em>cooperative multi-tasking</em>. Async functions can combine I/O requests, making your code faster.</p>
 </span></div></div></div></div></div></div></div><div class="container paddingBottom paddingTop"><div class="wrapper"><div class="gridBlock"><div class="blockElement imageAlignSide twoByGridBlock"><div class="blockContent"><h2>Generics</h2><div><div><span><p>Hack supports a rich set of <strong><a href="https://docs.hhvm.com/hack/types/generic-types">generic types</a></strong>, including <strong><a href="https://docs.hhvm.com/hack/generics/type-parameters">type parameters</a></strong>, <strong><a href="https://docs.hhvm.com/hack/generics/type-constraints">constraints</a></strong>, associated <strong><a href="https://docs.hhvm.com/hack/classes/type-constants-revisited">type constants</a></strong> and even <strong><a href="https://docs.hhvm.com/hack/generics/reified-generics">reification</a></strong>.</p>
-</span></div></div></div><div class="blockImage"><div><div><span><pre><code class="hljs css language-hack">  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Box</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
-    <span class="hljs-keyword">protected</span> T $data;
+</span></div></div></div><div class="blockImage"><div><div><span><pre><code class="hljs css language-hack"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Box</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+  <span class="hljs-keyword">protected</span> T $data;
 
-    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(T $data)</span> </span>{
-      <span class="hljs-keyword">$this</span>-&gt;data = $data;
-    }
-
-    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getData</span><span class="hljs-params">()</span>: <span class="hljs-title">T</span> </span>{
-      <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;data;
-    }
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(T $data)</span> </span>{
+    <span class="hljs-keyword">$this</span>-&gt;data = $data;
   }
-</code></pre>
-</span></div></div></div></div></div></div></div><div class="container lightBackground paddingBottom paddingTop"><div class="wrapper"><div class="gridBlock"><div class="blockElement imageAlignSide imageAlignLeft twoByGridBlock"><div class="blockImage"><div><div><span><pre><code class="hljs css language-hack">  <span class="hljs-comment">// Traditional: Risky and easy to misplace tags!</span>
-  $user_name = <span class="hljs-string">'Fred'</span>;
-  <span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;tt&gt;Hello &lt;strong&gt;$user_name&lt;/tt&gt;&lt;/strong&gt;"</span>;
 
-  <span class="hljs-comment">// XHP: Typechecked, well-formed, and secure</span>
-  $user_name = <span class="hljs-string">'Andrew'</span>;
-  $xhp = &lt;tt&gt;Hello &lt;strong&gt;{$user_name}&lt;/strong&gt;&lt;/tt&gt;;
-  <span class="hljs-keyword">echo</span> await $xhp-&gt;toStringAsync();
+  <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getData</span><span class="hljs-params">()</span>: <span class="hljs-title">T</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;data;
+  }
+}
+</code></pre>
+</span></div></div></div></div></div></div></div><div class="container lightBackground paddingBottom paddingTop"><div class="wrapper"><div class="gridBlock"><div class="blockElement imageAlignSide imageAlignLeft twoByGridBlock"><div class="blockImage"><div><div><span><pre><code class="hljs css language-hack"><span class="hljs-comment">// Traditional: Risky and easy to misplace tags!</span>
+$user_name = <span class="hljs-string">'Fred'</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-string">"&lt;tt&gt;Hello &lt;strong&gt;$user_name&lt;/tt&gt;&lt;/strong&gt;"</span>;
+
+<span class="hljs-comment">// XHP: Typechecked, well-formed, and secure</span>
+$user_name = <span class="hljs-string">'Andrew'</span>;
+$xhp = &lt;tt&gt;Hello &lt;strong&gt;{$user_name}&lt;/strong&gt;&lt;/tt&gt;;
+<span class="hljs-keyword">echo</span> await $xhp-&gt;toStringAsync();
 </code></pre>
 </span></div></div></div><div class="blockContent"><h2>XHP</h2><div><div><span><p><strong><a href="https://docs.hhvm.com/hack/XHP/introduction">XHP</a></strong> provides a native XML-like representation of output (e.g., HTML) and allows UI code to be typechecked, automatically avoiding several common issues like cross-site scripting (XSS) and double-escaping.</p>
 </span></div><div><span><p>XHP is <em>safe by default</em>: All variables are automatically escaped in a context-appropriate way.</p>
