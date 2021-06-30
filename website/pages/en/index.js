@@ -16,48 +16,49 @@ const translate = require("../../server/translate.js").translate;
 const pre = "```";
 const asyncExample= `${pre}hack
 <<__EntryPoint>>
-  async function my_example(): Awaitable<void> {
-    $user_ids = vec[1, 2, 3];
+async function my_example(): Awaitable<void> {
+  $user_ids = vec[1, 2, 3];
 
-    // Initiate all the database requests together,
-    // so we spend less time waiting.
-    $user_names = await Vec\map_async(
-      $user_ids,
-      async ($id) ==> await fetch_user_name($id),
-    );
-    // Execution continues after requests complete.
+  // Initiate all the database requests together,
+  // so we spend less time waiting.
+  $user_names = await Vec\\map_async(
+    $user_ids,
+    async ($id) ==> await fetch_user_name($id),
+  );
+  // Execution continues after requests complete.
 
-    echo Str\join($user_names, ", ");
-  }
+  echo Str\\join($user_names, ", ");
+}
 
-  async function fetch_user_name(int $_):
-    Awaitable<string> {
-      // This could be a database request.
-      return "";
-    }
+async function fetch_user_name(
+  int $_,
+): Awaitable<string> {
+  // This could be a database request.
+  return "";
+}
 ${pre}`;
 const genericsExample = `${pre}hack
-  class Box<T> {
-    protected T $data;
+class Box<T> {
+  protected T $data;
 
-    public function __construct(T $data) {
-      $this->data = $data;
-    }
-
-    public function getData(): T {
-      return $this->data;
-    }
+  public function __construct(T $data) {
+    $this->data = $data;
   }
+
+  public function getData(): T {
+    return $this->data;
+  }
+}
 ${pre}`;
 const XHPExample = `${pre}hack
-  // Traditional: Risky and easy to misplace tags!
-  $user_name = 'Fred';
-  echo "<tt>Hello <strong>$user_name</tt></strong>";
+// Traditional: Risky and easy to misplace tags!
+$user_name = 'Fred';
+echo "<tt>Hello <strong>$user_name</tt></strong>";
 
-  // XHP: Typechecked, well-formed, and secure
-  $user_name = 'Andrew';
-  $xhp = <tt>Hello <strong>{$user_name}</strong></tt>;
-  echo await $xhp->toStringAsync();
+// XHP: Typechecked, well-formed, and secure
+$user_name = 'Andrew';
+$xhp = <tt>Hello <strong>{$user_name}</strong></tt>;
+echo await $xhp->toStringAsync();
 ${pre}`;
 class Button extends React.Component {
   render() {
