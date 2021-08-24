@@ -88,7 +88,6 @@ class HomeSplash extends React.Component {
             <div className="inner">
               <h2 className="projectTitle">
                 {siteConfig.title}
-                <small>{siteConfig.tagline}</small>
               </h2>
               <div className="section promoSection">
                 <div className="promoRow">
@@ -116,7 +115,7 @@ class Index extends React.Component {
       <div>
         <HomeSplash language={language} />
         <div className="mainContainer">
-          <Container padding={["bottom", "top"]}>
+          <Container padding={["bottom"]}>
             <GridBlock
               align="center"
               contents={[
