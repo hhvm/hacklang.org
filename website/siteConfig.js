@@ -51,10 +51,6 @@ const siteConfig = {
     {
       href: "http://hhvm.com/blog",
       label: "Blog"
-    },
-    {
-      href: "http://webchat.freenode.net/?channels=hhvm",
-      label: "IRC"
     }
   ],
 
