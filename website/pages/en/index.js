@@ -107,6 +107,30 @@ class HomeSplash extends React.Component {
   }
 }
 
+
+function VideoContainer() {
+  return (
+    <div align="center" className="container margin-bottom--xl">
+      <div className="row">
+        <div className="col">
+          <h2>Watch Introductory Video</h2>
+          <div>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/XlWUUWS2UEE"
+              title="Explain Like I'm 5: Hack"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 class Index extends React.Component {
   render() {
     let language = this.props.language || "en";
@@ -115,6 +139,7 @@ class Index extends React.Component {
       <div>
         <HomeSplash language={language} />
         <div className="mainContainer">
+          <VideoContainer />
           <Container padding={["bottom"]}>
             <GridBlock
               align="center"
