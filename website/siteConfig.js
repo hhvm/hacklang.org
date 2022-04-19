@@ -10,7 +10,7 @@
 
 const siteConfig = {
   title: "Hack" /* title for your website */,
-  /* tagline:  "foo" , */
+  tagline:  "Hack is an object-oriented programming language for building reliable websites at epic scale",
   disableTitleTagline: true,
   url: "https://hacklang.org" /* your website url */,
   baseUrl: "/" /* base url for your project */,

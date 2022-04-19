@@ -56,7 +56,7 @@ $user_name = 'Fred';
 echo "<tt>Hello <strong>$user_name</tt></strong>";
 
 // XHP: Typechecked, well-formed, and secure
-$user_name = 'Andrew';
+$user_name = 'Fred';
 $xhp = <tt>Hello <strong>{$user_name}</strong></tt>;
 echo await $xhp->toStringAsync();
 ${pre}`;
@@ -89,6 +89,9 @@ class HomeSplash extends React.Component {
               <h2 className="projectTitle">
                 {siteConfig.title}
               </h2>
+              <h4 className="projectTagline">
+                {siteConfig.tagline}
+              </h4>
               <div className="section promoSection">
                 <div className="promoRow">
                   <div className="pluginRowBlock">
@@ -110,10 +113,9 @@ class HomeSplash extends React.Component {
 
 function VideoContainer() {
   return (
-    <div align="center" className="container margin-bottom--xl">
+    <div align="center" padding="bottom" className="container">
       <div className="row">
         <div className="col">
-          <h2>Watch Introductory Video</h2>
           <div>
             <iframe
               width="560"
@@ -154,7 +156,6 @@ class Index extends React.Component {
         <SocialBanner />
         <HomeSplash language={language} />
         <div className="mainContainer">
-          <VideoContainer />
           <Container padding={["bottom"]}>
             <GridBlock
               align="center"
@@ -183,6 +184,30 @@ class Index extends React.Component {
           </Container>
           <Container padding={["bottom", "top"]} background="light">
             <div className="gridBlock">
+              <div className="blockElement imageAlignSide twoByGridBlock">
+                <div className="blockContent">
+                  <h2>
+                    Watch Our Introduction to Hack Video!
+                  </h2>
+                  <div>
+                    <MarkdownBlock>
+                      Hack is a programming language developed by Meta. It lets you write code quickly, while also having safety features built in, like static typechecking. 
+                    </MarkdownBlock>
+                    <MarkdownBlock>
+                      **[Hack was open-sourced in March, 2014](https://engineering.fb.com/2014/03/20/developer-tools/hack-a-new-programming-language-for-hhvm/).**
+                    </MarkdownBlock>
+                  </div>
+                </div>
+                <div className="blockImage">
+                  <div>
+                    <VideoContainer/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Container>
+          <Container padding={["bottom", "top"]}>
+            <div className="gridBlock">
               <div className="blockElement imageAlignSide imageAlignLeft twoByGridBlock">
                 <div className="blockImage">
                   <div>
@@ -204,7 +229,7 @@ class Index extends React.Component {
               </div>
             </div>
           </Container>
-          <Container padding={["bottom", "top"]}>
+          <Container padding={["bottom", "top"]} background="light">
             <div className="gridBlock">
               <div className="blockElement imageAlignSide twoByGridBlock">
                 <div className="blockContent">
@@ -227,7 +252,7 @@ class Index extends React.Component {
               </div>
             </div>
           </Container>
-          <Container padding={["bottom", "top"]} background="light">
+          <Container padding={["bottom", "top"]}>
             <div className="gridBlock">
               <div className="blockElement imageAlignSide imageAlignLeft twoByGridBlock">
                 <div className="blockImage">
@@ -253,7 +278,7 @@ class Index extends React.Component {
               </div>
             </div>
           </Container>
-          <Container padding={["bottom"]}>
+          <Container padding={["bottom"]} background="light">
             <div className="gridBlock">
               <div className="blockElement">
                 <div className="blockContent">
