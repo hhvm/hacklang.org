@@ -56,7 +56,7 @@ $user_name = 'Fred';
 echo "<tt>Hello <strong>$user_name</tt></strong>";
 
 // XHP: Typechecked, well-formed, and secure
-$user_name = 'Andrew';
+$user_name = 'Fred';
 $xhp = <tt>Hello <strong>{$user_name}</strong></tt>;
 echo await $xhp->toStringAsync();
 ${pre}`;
