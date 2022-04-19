@@ -21,3 +21,8 @@
   margin: 0 auto;
   text-align: center;
 }
+
+/* Hack Description */
+.projectTagline {
+  font-style: italic;
+}

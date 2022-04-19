@@ -89,6 +89,9 @@ class HomeSplash extends React.Component {
               <h2 className="projectTitle">
                 {siteConfig.title}
               </h2>
+              <h3 className="projectTagline">
+                {siteConfig.tagline}
+              </h3>
               <div className="section promoSection">
                 <div className="promoRow">
                   <div className="pluginRowBlock">
@@ -113,7 +116,7 @@ function VideoContainer() {
     <div align="center" className="container margin-bottom--xl">
       <div className="row">
         <div className="col">
-          <h2>Watch Introductory Video</h2>
+          <h2>Watch Our Introductory Video!</h2>
           <div>
             <iframe
               width="560"
