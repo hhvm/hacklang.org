@@ -89,9 +89,9 @@ class HomeSplash extends React.Component {
               <h2 className="projectTitle">
                 {siteConfig.title}
               </h2>
-              <h3 className="projectTagline">
+              <h4 className="projectTagline">
                 {siteConfig.tagline}
-              </h3>
+              </h4>
               <div className="section promoSection">
                 <div className="promoRow">
                   <div className="pluginRowBlock">
@@ -156,7 +156,7 @@ class Index extends React.Component {
         <SocialBanner />
         <HomeSplash language={language} />
         <div className="mainContainer">
-          <Container>
+          <Container padding={["bottom"]}>
             <GridBlock
               align="center"
               contents={[
@@ -194,7 +194,7 @@ class Index extends React.Component {
                       Hack is a programming language developed by Meta. It lets you write code quickly, while also having safety features built in, like static typechecking. 
                     </MarkdownBlock>
                     <MarkdownBlock>
-                      **[Hack was open-sourced in March, 2014](https://engineering.fb.com/2014/03/20/developer-tools/hack-a-new-programming-language-for-hhvm/).**ç
+                      **[Hack was open-sourced in March, 2014](https://engineering.fb.com/2014/03/20/developer-tools/hack-a-new-programming-language-for-hhvm/).**
                     </MarkdownBlock>
                   </div>
                 </div>
