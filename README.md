@@ -16,4 +16,4 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for details on how to add or modify con
 1. `yarn start`
 
 ## License
-hacklang.org is CC BY-NC 4.0 licensed, as found in the LICENSE file.
+hacklang.org is CC BY 4.0 licensed, as found in the LICENSE file.
