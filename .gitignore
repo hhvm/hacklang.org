@@ -13,11 +13,11 @@ yarn-error.log
 lib/core/metadata.js
 lib/core/MetadataBlog.js
 
-website/translated_docs
-website/build/
-website/yarn.lock
-website/node_modules
-website/i18n/*
-website/package-lock.json
-website/yarn-error.log
-!website/i18n/en.json
+translated_docs
+build/
+yarn.lock
+node_modules
+i18n/*
+package-lock.json
+yarn-error.log
+!i18n/en.json

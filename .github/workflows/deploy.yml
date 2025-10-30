@@ -19,7 +19,6 @@ jobs:
           cache: npm
       - name: Test Build
         run: |
-          cd website
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
@@ -41,7 +40,6 @@ jobs:
           cache: npm
       - name: Release to GitHub Pages
         run: |
-          cd website
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
@@ -53,7 +51,7 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: website/build
+          path: build
 
   deploy:
     name: Deploy to GitHub Pages
