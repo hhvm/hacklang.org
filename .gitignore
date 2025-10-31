@@ -20,4 +20,5 @@ node_modules
 i18n/*
 package-lock.json
 yarn-error.log
+.docusaurus
 !i18n/en.json

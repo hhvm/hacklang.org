@@ -1,6 +1,6 @@
 # The hacklang.org landing page content
 
-This directory contains the landing page and other documentation for [hacklang.org](http://hacklang.org). It contains links to the [Hack user documentation over at docs.hhvm.com](http://docs.hhvm.com/hack) and other relevant places. [hacklang.org](http://hacklang.org) is hosted on GitHub pages.
+This directory contains the landing page and other documentation for [hacklang.org](http://hacklang.org). It contains links to the [Hack user documentation over at docs.hhvm.com](http://docs.hhvm.com/hack) and other relevant places. [hacklang.org](http://hacklang.org) is hosted on GitHub Pages.
 
 ## Contributing
 

@@ -1,0 +1,52 @@
+/**
+ * (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary.
+ */
+
+:root {
+  --ifm-code-font-size: 95%;
+  --ifm-color-primary: #fb721d;
+  --ifm-color-primary-dark: #f86204;
+  --ifm-color-primary-darker: #ea5c04;
+  --ifm-color-primary-darkest: #c14c03;
+  --ifm-color-primary-light: #fb8339;
+  --ifm-color-primary-lighter: #fc8c46;
+  --ifm-color-primary-lightest: #fca570;
+  --ifm-button-background-color: #f8f8f8;
+  --ifm-button-border-color: #dadada;
+  --ifm-button-color: #404040;
+  --ifm-button-hover-background-color: #f2f2f2;
+  --ifm-button-hover-border-color: #c8c8c8;
+  --ifm-button-hover-color: #202020;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.footer {
+  border-top: 1px solid #d8d8d8;
+  background-color: #eaeaea;
+  background-image: url('/img/footer-bg.png');
+  color: #000;
+}
+
+.footer a {
+  color: #303030;
+}
+
+.footer__copyright {
+  color: #303030;
+}
+
+.footer__bottom > div > a {
+  opacity: 0.8;
+}
+
+.button:hover {
+  background-color: var(--ifm-button-hover-background-color);
+  border-color: var(--ifm-button-hover-border-color);
+  color: var(--ifm-button-hover-color);
+}
