@@ -1,9 +1,15 @@
 /**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
  * Original by Aaron Harun: http://aahacreative.com/2012/07/31/php-syntax-highlighting-prism/
  * Modified by Miles Johnson: http://milesj.me
  * Rewritten by Tom Pavelec
- *
- * Supports PHP 5.3 - 8.0
+ * Adapted to include Hack keywords by @tlil
  */
 (function (Prism) {
 	var comment = /\/\*[\s\S]*?\*\/|\/\/.*|#(?!\[).*/;
