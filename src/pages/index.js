@@ -166,14 +166,12 @@ export default function Home() {
                 Hack supports a rich set of <a href="https://docs.hhvm.com/hack/types/generic-types">generic types</a>,
                 including:
               </p>
-              <p>
-                <ul>
-                  <li><a href="https://docs.hhvm.com/hack/generics/type-parameters">type parameters</a>,</li>
-                  <li><a href="https://docs.hhvm.com/hack/generics/type-constraints">constraints</a>,</li>
-                  <li>associated <a href="https://docs.hhvm.com/hack/classes/type-constants-revisited">type constants</a>,</li>
-                  <li>and even <a href="https://docs.hhvm.com/hack/generics/reified-generics">reification</a>.</li>
-                </ul>
-              </p>
+              <ul>
+                <li><a href="https://docs.hhvm.com/hack/generics/type-parameters">type parameters</a>,</li>
+                <li><a href="https://docs.hhvm.com/hack/generics/type-constraints">constraints</a>,</li>
+                <li>associated <a href="https://docs.hhvm.com/hack/classes/type-constants-revisited">type constants</a>,</li>
+                <li>and even <a href="https://docs.hhvm.com/hack/generics/reified-generics">reification</a>.</li>
+              </ul>
             </div>
           </div>
           <div className="col col--7">
