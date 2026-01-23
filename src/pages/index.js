@@ -150,7 +150,7 @@ export default function Home() {
             </h2>
             <div>
               <p>
-                <a href="https://docs.hhvm.com/docs/hack/asynchronous-operations/introduction">Asynchronous operations</a>{' '}
+                <a href="https://docs.hhvm.com/hack/asynchronous-operations/introduction">Asynchronous operations</a>{' '}
                 allow <em>cooperative multi-tasking</em>. Async functions can combine I/O requests, making your code faster.
               </p>
             </div>
@@ -163,14 +163,14 @@ export default function Home() {
             </h2>
             <div>
               <p>
-                Hack supports a rich set of <a href="https://docs.hhvm.com/docs/hack/types/generic-types">generic types</a>,
+                Hack supports a rich set of <a href="https://docs.hhvm.com/hack/types/generic-types">generic types</a>,
                 including:
               </p>
               <ul>
-                <li><a href="https://docs.hhvm.com/docs/hack/generics/type-parameters/">type parameters</a>,</li>
-                <li><a href="https://docs.hhvm.com/docs/hack/generics/type-constraints/">constraints</a>,</li>
-                <li>associated <a href="https://docs.hhvm.com/docs/hack/modules/type-aliases/">type constants</a>,</li>
-                <li>and even <a href="https://docs.hhvm.com/docs/hack/reified-generics/reified-generics/">reification</a>.</li>
+                <li><a href="https://docs.hhvm.com/hack/generics/type-parameters/">type parameters</a>,</li>
+                <li><a href="https://docs.hhvm.com/hack/generics/type-constraints/">constraints</a>,</li>
+                <li>associated <a href="https://docs.hhvm.com/hack/modules/type-aliases/">type constants</a>,</li>
+                <li>and even <a href="https://docs.hhvm.com/hack/reified-generics/reified-generics/">reification</a>.</li>
               </ul>
             </div>
           </div>
@@ -188,7 +188,7 @@ export default function Home() {
             </h2>
             <div>
               <p>
-                <a href="https://docs.hhvm.com/docs/hack/XHP/introduction/">XHP</a> provides a native XML-like
+                <a href="https://docs.hhvm.com/hack/XHP/introduction/">XHP</a> provides a native XML-like
                 representation of output (e.g., HTML) and allows UI code to be type-checked, automatically
                 avoiding several common issues like cross-site scripting (XSS) and double-escaping.
               </p>
